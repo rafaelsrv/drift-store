@@ -8,8 +8,14 @@ import { useEffect, useState } from "react";
 const page = () => {
 
     const [sortType, setSortType] = useState("relevant");
-    const [genderFilter, setGenderFilter] = useState("");
-    const [fabFilter, setFabFilter] = useState("");
+    const [maleFilter, setGenderFilter] = useState("");
+    const [femaleFilter, setFemaleGenderFilter] = useState("");
+    const [adiddasFilter, setAdiddasFilter] = useState("");
+    const [calenciagaFilter, setCalenciagaFilter] = useState("");
+    const [swissFilter, setSwissFilter] = useState("");
+    const [nikeFilter, setNikeFilter] = useState("");
+    const [pumaFilter, setPumaFilter] = useState("");
+    
 
 const tenisItens = [
     {
@@ -17,7 +23,7 @@ const tenisItens = [
         title: "Tênis 1",
         price: "150",
         promo: "30% OFF",
-        bg:"success",
+        bg:"btofer",
         gender:"Masculino",
         fab:"Adiddas",
     },
@@ -26,7 +32,7 @@ const tenisItens = [
         title: "Tênis 2",
         price: "200",
         promo: "30% OFF",
-        bg:"success",
+        bg:"btofer",
         gender:"Masculino",
         fab:"Adiddas",
     },
@@ -155,6 +161,39 @@ sortType === "higher" ? b.price -a.price : sortType === "lower" ? a.price - b.pr
 const handleSelectChange = (event) =>{
     setSortType(event.target.value)
 }
+const handleGenderCheck = () =>{
+    setGenderFilter(!maleFilter)
+}
+const handleFemaleGenderCheck =() =>{
+    setFemaleGenderFilter(!femaleFilter)
+}
+const handleAddidasFabFilter = ()=>{
+    setAdiddasFilter(!adiddasFilter)
+}
+const handleCalenciagaFabFilter = ()=>{
+    setCalenciagaFilter(!calenciagaFilter)
+}
+const handleNikeFabFilter = ()=>{
+    setNikeFilter(!nikeFilter)
+}
+const handlePumaFabFilter = ()=>{
+    setPumaFilter(!pumaFilter)
+}
+const handleSwissFabFilter = ()=>{
+    setSwissFilter(!swissFilter)
+}
+
+
+
+
+
+
+
+const filteredItems = maleFilter? sortedItems.filter(item=>item.gender === "Masculino") : femaleFilter? sortedItems.filter(item=>item.gender === "Feminino") : adiddasFilter? sortedItems.filter(item=>item.fab === "Adiddas"): calenciagaFilter? sortedItems.filter(item=>item.fab ==="Calenciaga"): swissFilter? sortedItems.filter(item=>item.fab ==="Swiss") : nikeFilter? sortedItems.filter(item=>item.fab ==="Nike") : pumaFilter? sortedItems.filter(item=>item.fab === "Puma"):sortedItems
+    // filteredItems = femaleFilter? filteredItems.filter(item=>item.gender === "Feminino") : sortedItems
+    // filteredItems = adiddasFilter? filteredItems.filter(item=>item.fab === "Adiddas") : sortedItems
+    // filteredItems = calenciagaFilter? filteredItems.filter(item=>item.fab === "Calenciaga") : sortedItems
+
 
 console.log(sortType)
 
@@ -173,23 +212,23 @@ console.log(sortType)
         <div className="w-[308px] h-[720px] bg-fundo ">
             <div>Marca</div>
             <div className="flex gap-2 mt-2">
-            <input type="checkbox" className="w-[22px] h-[22px] bg-primary accent-primary"/>
+            <input type="checkbox"  value="Adiddas" checked={adiddasFilter} onChange={handleAddidasFabFilter} className="w-[22px] h-[22px] bg-primary accent-primary"/>
                 <label className="text-sm ">Adiddas</label>
             </div>
             <div className="flex gap-2 mt-2">
-            <input type="checkbox" className="w-[22px] h-[22px] accent-primary"/>
+            <input type="checkbox"  value="Calenciaga" checked={calenciagaFilter} onChange={handleCalenciagaFabFilter} className="w-[22px] h-[22px] accent-primary"/>
                 <label className="text-sm">Calenciaga</label>
             </div>    
             <div className="flex gap-2 mt-2">
-            <input type="checkbox" className="w-[22px] h-[22px] accent-primary"/>
+            <input type="checkbox"  value="Swiss" checked={swissFilter} onChange={handleSwissFabFilter} className="w-[22px] h-[22px] accent-primary"/>
                 <label className="text-sm">K-Swiss</label>
             </div>    
             <div className="flex gap-2 mt-2">
-            <input type="checkbox" className="w-[22px] h-[22px] accent-primary"/>
+            <input type="checkbox"  value="Nike" checked={nikeFilter} onChange={handleNikeFabFilter} className="w-[22px] h-[22px] accent-primary"/>
                 <label className="text-sm">Nike</label>
             </div>    
             <div className="flex gap-2 mt-2">
-            <input type="checkbox" className="w-[22px] h-[22px] accent-primary"/>
+            <input type="checkbox"  value="Puma" checked={pumaFilter} onChange={handlePumaFabFilter} className="w-[22px] h-[22px] accent-primary"/>
                 <label className="text-sm">Puma</label>
             </div>
             <div>Categoria</div>
@@ -198,7 +237,7 @@ console.log(sortType)
                 <label className="text-sm">Esporte e Lazer</label>
             </div>
             <div className="flex gap-2 mt-2">
-            <input type="checkbox" className="w-[22px] h-[22px] accent-primary"/>
+            <input type="checkbox"  className="w-[22px] h-[22px] accent-primary"/>
                 <label className="text-sm">Casual</label>
             </div>    
             <div className="flex gap-2 mt-2">
@@ -212,11 +251,11 @@ console.log(sortType)
             
             <div>Gênero</div>
             <div className="flex gap-2 mt-2">
-            <input type="checkbox" className="w-[22px] h-[22px] accent-primary"/>
+            <input type="checkbox" checked={maleFilter} onChange={handleGenderCheck} className="w-[22px] h-[22px] accent-primary "/>
                 <label className="text-sm">Masculino</label>
             </div>
             <div className="flex gap-2 mt-2">
-            <input type="checkbox" className="w-[22px] h-[22px] accent-primary"/>
+            <input type="checkbox" checked={femaleFilter} onChange={handleFemaleGenderCheck} className="w-[22px] h-[22px] accent-primary"/>
                 <label className="text-sm">Feminino</label>
             </div>  
             <div className="flex gap-2 mt-2">
@@ -239,8 +278,8 @@ console.log(sortType)
         
         <div className="">
             
-        <div className="grid grid-cols-3 bg-fundo gap-5">
-            {sortedItems.map((tenis) => (
+        <div className="grid grid-cols-3 w-[900px] bg-fundo gap-5">
+            {filteredItems.map((tenis) => (
                 <div key={tenis.title}>
                     <div className="w-[292px] h-[439px] rounded-2xl">
                     <div className="flex justify-center flex-col items-center bg-[#FFFFFF]">
