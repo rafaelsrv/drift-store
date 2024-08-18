@@ -10,8 +10,8 @@ const Promo = () => {
       
       <div className="w-[80%] h-[60%] bg-fundo mt-20 flex"> 
         <div className="w-[39%] h-[100%] flex flex-col justify-end">
-          <div className=" w-full h-[88%] bg-fundo flex flex-col justify-between ">
-          <h1 className="text-warning font-bold">Melhores ofertas personalizadas</h1>
+          <div className=" w-full h-[88%] bg-fundo flex flex-col justify-between">
+            <h1 className="text-warning  font-bold">Melhores ofertas personalizadas</h1>
             <h1 className="font-bold text-5xl">Queima de estoque Nike 🔥</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed a ipsa fugiat eveniet sequi nihil vel modi mollitia quia doloremque debitis libero totam voluptates, voluptate itaque eos, tempore nesciunt similique!</p>
             <div className="h-[40px] w-[158px] bg-primary rounded-lg flex justify-center items-center hover:cursor-pointer text-fundo">Ver Ofertas</div>

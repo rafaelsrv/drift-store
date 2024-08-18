@@ -10,8 +10,8 @@ const App = () => {
     <div>
       <Promo/>
       <Ofertas/>
-      <Tenis/>
       <Jordan/>
+      <Tenis/>
     </div>
     
     

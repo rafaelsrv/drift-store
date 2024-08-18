@@ -23,8 +23,8 @@ const Header = () => {
                 </div>
                 <div className="flex ml-44  gap-10"> 
                     <div><Link className="hover:text-primary hover:underline hover:decoration-primary" href="/">Home</Link></div>
-                    <div><Link className="hover:text-primary hover:underline hover:decoration-primary" href="/pages">Produtos</Link></div>
-                    <div><Link className="hover:text-primary hover:underline hover:decoration-primary" href="/">Categorias</Link></div>
+                    <div><Link className="hover:text-primary hover:underline hover:decoration-primary" href="/produtos">Produtos</Link></div>
+                    <div><Link className="hover:text-primary hover:underline hover:decoration-primary" href="/categories">Categorias</Link></div>
                     <div><Link className="hover:text-primary hover:underline hover:decoration-primary" href="/">Meus Pedidos</Link></div>
                 </div>
             </div>
