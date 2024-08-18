@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 
 const page = () => {
@@ -26,6 +27,7 @@ const tenisItens = [
         bg:"btofer",
         gender:"Masculino",
         fab:"Adiddas",
+        id:14,
     },
     {
         image: "/assets/bluetenis.png",
@@ -35,6 +37,7 @@ const tenisItens = [
         bg:"btofer",
         gender:"Masculino",
         fab:"Adiddas",
+        id:1,
     },
     {
         image: "/assets/bluetenis.png",
@@ -44,6 +47,7 @@ const tenisItens = [
         bg: "#FFFFFF",
         gender:"Feminino",
         fab:"Adiddas",
+        id:2,
     },
     {
         image: "/assets/bluetenis.png",
@@ -53,6 +57,7 @@ const tenisItens = [
         bg: "#FFFFFF",
         gender:"Masculino",
         fab:"Calenciaga",
+        id:3,
     },
     {
         image: "/assets/bluetenis.png",
@@ -62,6 +67,7 @@ const tenisItens = [
         bg: "#FFFFFF",
         gender:"Masculino",
         fab:"Calenciaga",
+        id:15,
     },
     {
         image: "/assets/bluetenis.png",
@@ -71,6 +77,7 @@ const tenisItens = [
         bg: "#FFFFFF",
         gender:"Feminino",
         fab:"Calenciaga",
+        id:4,
     },
     {
         image: "/assets/bluetenis.png",
@@ -79,6 +86,7 @@ const tenisItens = [
         promo: false,
         gender:"Masculino",
         fab:"Calenciaga",
+        id:5,
     },
     {
         image: "/assets/bluetenis.png",
@@ -88,6 +96,7 @@ const tenisItens = [
         bg:"#FFFFFF",
         gender:"Feminino",
         fab:"Swiss",
+        id:6,
     },
     {
         image: "/assets/bluetenis.png",
@@ -97,6 +106,7 @@ const tenisItens = [
         bg:"#FFFFFF",
         gender:"Feminino",
         fab:"Swiss",
+        id:7,
     },
     {
         image: "/assets/bluetenis.png",
@@ -106,6 +116,7 @@ const tenisItens = [
         bg:"#FFFFFF",
         gender:"Masculino",
         fab:"Puma",
+        id:8,
     },
     {
         image: "/assets/bluetenis.png",
@@ -115,6 +126,7 @@ const tenisItens = [
         bg:"#FFFFFF",
         gender:"Masculino",
         fab:"Puma",
+        id:9,
     },
     {
         image: "/assets/bluetenis.png",
@@ -124,6 +136,7 @@ const tenisItens = [
         bg:"#FFFFFF",
         gender:"Feminino",
         fab:"Puma",
+        id:10,
     },
     {
         image: "/assets/bluetenis.png",
@@ -133,6 +146,7 @@ const tenisItens = [
         bg:"#FFFFFF",
         gender:"Feminino",
         fab:"Nike",
+        id:11,
     },
     {
         image: "/assets/bluetenis.png",
@@ -142,6 +156,7 @@ const tenisItens = [
         bg:"#FFFFFF",
         gender:"Feminino",
         fab:"Nike",
+        id:12,
     },
     {
         image: "/assets/bluetenis.png",
@@ -151,6 +166,7 @@ const tenisItens = [
         bg:"#FFFFFF",
         gender:"Feminino",
         fab:"Nike",
+        id:13
     },
 ]
 
@@ -242,11 +258,11 @@ console.log(sortType)
             </div>    
             <div className="flex gap-2 mt-2">
             <input type="checkbox" className="w-[22px] h-[22px] accent-primary"/>
-                <label className="text-sm">Nike</label>
+                <label className="text-sm">Utilitário</label>
             </div>   
             <div className="flex gap-2 mt-2">
             <input type="checkbox" className="w-[22px] h-[22px] accent-primary"/>
-                <label className="text-sm">Puma</label>
+                <label className="text-sm">Corrida</label>
             </div>  
             
             <div>Gênero</div>
@@ -280,6 +296,7 @@ console.log(sortType)
             
         <div className="grid grid-cols-3 w-[900px] bg-fundo gap-5">
             {filteredItems.map((tenis) => (
+                <Link href={`/products/${tenis.id}`}>
                 <div key={tenis.title}>
                     <div className="w-[292px] h-[439px] rounded-2xl">
                     <div className="flex justify-center flex-col items-center bg-[#FFFFFF]">
@@ -291,6 +308,7 @@ console.log(sortType)
                     <div className="m-1"><span className="line-through"> R$1000</span>{tenis.price}</div>
                 </div>
                 </div>
+                </Link>
             ))
             }
                              

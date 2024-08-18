@@ -21,7 +21,8 @@ module.exports = {
       "fundoazul": '#D8E3F2',
       "darkgrey": '#474747',
       "fundosapato": '#6962620D',
-      "whiteb":'#f8fafc'
+      "whiteb":'#f8fafc',
+      "fundoTenis":'#E2E3FF'
     },
 
     extend: {
